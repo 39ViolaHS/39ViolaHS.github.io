@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>あなたのPCはウイルスに感染しました</title>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+
+  <body>
+    <h1 class="title">ご使用のシステムにウイルスが検出されました</h1>
+    <p>ウイルスを駆除するには速やかに以下の<span class="underline"> ウイルス爆☆発 </span>ボタンをクリックし、アンチウイルスソフトを実行してください</p>
+    <p><span id="timer" class="underline">19721121</span>秒以内に実行されない場合、ハードディスクが自動的に初期化されます</p>
+    <a id="bakuhatsu">ウイルス爆☆発</a>
+
+    <script>
+      //ウイルス爆発ボタン押下で爆発BGMオン
+      function click(){
+        window.open(`https://www.youtube.com/watch?v=UJEECvP0zAw`,``,`width=1000,height=700,left=100,top=100`);
+      }
+      let bakuhatsu = document.getElementById(`bakuhatsu`);
+      bakuhatsu.onclick = click;
+
+      //19721121カウントダウン
+      let count = 19721121;
+      let countdown = function(){
+        document.getElementById(`timer`).textContent = count.toString();
+        console.log(count--);
+        let id = setTimeout(countdown, 1000);
+        if(count < 0){
+          clearTimeout(id);
+        }
+      }
+      countdown();
+
+    </script>
+  </body>
+
+</html>
